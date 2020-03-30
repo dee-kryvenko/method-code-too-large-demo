@@ -1,7 +1,6 @@
 def call(int stages) {
-    String pipeline = ""
     for (stage = 1; stage <= stages; stage++) {
-        pipeline += """
+        String pipeline = """
 stage('Stage ${stage}') {
     podTemplate(yaml: getPod(${stage})) {
         node(POD_LABEL) {
@@ -10,7 +9,7 @@ stage('Stage ${stage}') {
     }
 }
 """
+        echo pipeline
+        evaluate(pipeline)
     }
-    echo pipeline
-    evaluate(pipeline)
 }
