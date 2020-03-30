@@ -22,5 +22,6 @@ pipeline {
   }
 }
 """
+    echo pipeline
     evaluate(pipeline)
 }
