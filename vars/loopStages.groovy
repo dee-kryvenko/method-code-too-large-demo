@@ -4,7 +4,7 @@ pipeline {
   agent none
   stages {
 """
-    stages.times { stage ->
+    for (stage = 1; stage <= stages; stages++) {
         pipeline += """
     stage('Stage ${stage}') {
         agent {
