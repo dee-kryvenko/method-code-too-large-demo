@@ -2,9 +2,11 @@ def call(int stages) {
     String pipeline = """
 pipeline {
   agent none
-  stages {"""
+  stages {
+"""
     stages.times { stage ->
-        pipeline += """    stage('Stage ${stage}') {
+        pipeline += """
+    stage('Stage ${stage}') {
         agent {
             kubernetes {
                 yaml getPod(${stage})
@@ -13,10 +15,13 @@ pipeline {
         steps {
             doSomethingBasedOnStageNameOrWhatever(${stage})
         }
-    }"""
     }
-    pipeline += """  }
-}"""
+"""
+    }
+    pipeline += """
+  }
+}
+"""
     echo pipeline
     evaluate(pipeline)
 }
