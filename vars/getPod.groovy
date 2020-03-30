@@ -1,5 +1,5 @@
 def call(int stage) {
-    String pod = """
+    return """
 apiVersion: v1
 kind: Pod
 metadata:
