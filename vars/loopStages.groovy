@@ -4,7 +4,7 @@ pipeline {
   agent none
   stages {
 """
-    for (stage = 1; stage <= stages; stages++) {
+    for (stage = 1; stage <= stages; stage++) {
         pipeline += """
     stage('Stage ${stage}') {
         agent {
