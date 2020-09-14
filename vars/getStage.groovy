@@ -2,7 +2,7 @@ import groovy.lang.GroovyShell
 
 def call(String input) {
     String stage = """
-L:{
+{ it ->
     agent none
     steps {
         echo "The input was ${input}"
