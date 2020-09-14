@@ -1,6 +1,6 @@
 import groovy.lang.GroovyShell
 
-def call(string input) {
+def call(String input) {
     String stage = """
 {
     agent none
